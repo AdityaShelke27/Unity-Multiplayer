@@ -9,8 +9,10 @@ public class CreateNicknamePanel : LobbyPanelBase
     [SerializeField] Button createNicknameBtn;
     private const int MAX_CHAR_FOR_NICKNAME = 2;
 
-    private void Start()
+    public override void InitPanel(LobbyUIManager uiManager)
     {
+        base.InitPanel(uiManager);
+
         createNicknameBtn.interactable = false;
         createNicknameBtn.onClick.AddListener(OnClickCreateNickname);
         inputField.onValueChanged.AddListener(OnInputValueChanged);
@@ -27,7 +29,8 @@ public class CreateNicknamePanel : LobbyPanelBase
 
         if (nickname.Length >= MAX_CHAR_FOR_NICKNAME)
         {
-            
+            base.ClosePanel();
+            lobbyUIManager.ShowPanel(LobbyPanelType.MiddleSectionPanel);
         }
     }
 }
