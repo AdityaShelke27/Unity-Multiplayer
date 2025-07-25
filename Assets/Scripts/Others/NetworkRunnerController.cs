@@ -24,7 +24,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
         // Register so that we get all the callbacks
         networkRunnerInstance.AddCallbacks(this);
 
-        //networkRunnerInstance.ProvideInput = true;
+        networkRunnerInstance.ProvideInput = true;
 
         StartGameArgs startGameArgs = new StartGameArgs()
         {
@@ -82,7 +82,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        Debug.Log($"OnInput");
+        //Debug.Log($"OnInput");
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)

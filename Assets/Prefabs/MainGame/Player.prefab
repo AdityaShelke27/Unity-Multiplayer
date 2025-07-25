@@ -253,6 +253,8 @@ GameObject:
   - component: {fileID: 6836962186420590864}
   - component: {fileID: 610809169301574786}
   - component: {fileID: 5586751282549861341}
+  - component: {fileID: 102645969223716159}
+  - component: {fileID: 4168578585549784751}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -299,6 +301,8 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 610809169301574786}
+  - {fileID: 102645969223716159}
+  - {fileID: 4168578585549784751}
   SimulationBehaviours: []
 --- !u!50 &6836962186420590864
 Rigidbody2D:
@@ -403,6 +407,38 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.368042, y: 0.6680603}
   m_EdgeRadius: 0
+--- !u!114 &102645969223716159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890197977468622191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2acce0ccae14434db7c6aab89137842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
+  _interpolationDataSource: 0
+  moveSpeed: 6
+--- !u!114 &4168578585549784751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890197977468622191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da12938160dcc04b9d90106243769a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WordOffset: 0
+  WordCount: 0
+  _interpolationDataSource: 0
+  player: {fileID: 102645969223716159}
 --- !u!1 &8788549763468404492
 GameObject:
   m_ObjectHideFlags: 0
