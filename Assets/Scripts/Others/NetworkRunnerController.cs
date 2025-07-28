@@ -12,6 +12,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
 
     [SerializeField] NetworkRunner networkRunnerPrefab;
     private NetworkRunner networkRunnerInstance;
+    public string PlayerNickname { get; private set; }
     public async void StartGame(GameMode mode, string roomName)
     {
         OnStartedRunnerConnection?.Invoke();
@@ -45,6 +46,10 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
         {
             Debug.LogError($"Failed to start: {result.ShutdownReason}");
         }
+    }
+    public void SetPlayerNickname(string name)
+    {
+        PlayerNickname = name;
     }
     public void ShutDownRunner()
     {
