@@ -18,7 +18,8 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public enum PlayerInputButtons
     {
         None,
-        Jump
+        Jump,
+        Shoot
     }
     public override void Spawned()
     {
@@ -70,7 +71,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
             CheckJumpInput(input);
         }
 
-        playerVisualController.UpdateScaleTransform(rigidBody.linearVelocity);
+        playerVisualController.UpdateScaleTransform(rigidBody.linearVelocity, weaponController.isFirePressed);
     }
     public override void Render()
     {
@@ -94,6 +95,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         data.HorizontalInput = horizontal;
         data.GunPivotRotation = weaponController.LocalPivotRot;
         data.NetworkButtons.Set(PlayerInputButtons.Jump, Input.GetKey(KeyCode.Space));
+        data.NetworkButtons.Set(PlayerInputButtons.Shoot, Input.GetButton("Fire1"));
 
         return data;
     }
